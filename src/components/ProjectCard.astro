@@ -1,0 +1,33 @@
+---
+import { projectImages } from '../images'
+import { imagePath, sitePath } from '../paths'
+import type { Project } from '../projects'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+const image = projectImages[project.cover]
+const { width, height } = image.thumbnail ?? image
+---
+
+<li>
+  <a class="project-card" href={sitePath(`projects/${project.slug}/`)}>
+    <span
+      class="project-card__media"
+      data-fit={project.coverFit ?? 'cover'}
+      style={project.coverPosition && { '--cover-position': project.coverPosition }}
+    >
+      <img
+        src={imagePath(project.cover, image.thumbnail ? 'thumbnail' : 'original')}
+        alt=""
+        width={width}
+        height={height}
+      />
+    </span>
+    <div class="project-card__label">
+      <h2>{project.title}</h2>
+    </div>
+  </a>
+</li>

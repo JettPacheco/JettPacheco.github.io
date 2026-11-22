@@ -1,0 +1,48 @@
+/* Start here when tuning either page. */
+:root {
+  /* Palette */
+  --page-background: #fff;
+  --text-color: #1e1c20;
+  --accent-color: #386581;
+  --rule-color: #b7bdc2;
+  --heading-color: #000;
+  --panel-background: #fff;
+  --panel-border-color: #b3b8bd;
+  --thumbnail-background: #f0f2f3;
+  --diagram-background: #fbfbef;
+  --graph-line-color: rgb(56 101 129 / 10%);
+  --graph-square-size: 24px;
+
+  /* Type */
+  --index-heading-font: system-ui, sans-serif;
+  --index-heading-size: clamp(2.75rem, 3.8vw, 3.625rem);
+  --index-title-font: system-ui, sans-serif;
+  --index-title-size: clamp(1.125rem, 1.95vw, 1.875rem);
+  --article-font: 'Source Serif 4', Georgia, serif;
+  --article-heading-size: clamp(2rem, 3vw, 2.625rem);
+  --article-body-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  --article-line-height: 1.46;
+
+  /* Homepage grid and thumbnail proportions */
+  --index-gutter: clamp(1rem, 2.67vw, 2.5625rem);
+  --index-width: 96rem;
+  --index-top-space: clamp(1.75rem, 2.96vw, 2.875rem);
+  --index-heading-indent: clamp(0rem, 1vw, 1rem);
+  --index-heading-gap: clamp(1.625rem, 2.6vw, 2.5rem);
+  --project-columns: 3;
+  --project-column-gap: clamp(1rem, 1.43vw, 1.5rem);
+  --project-row-gap: clamp(1.125rem, 1.7vw, 1.75rem);
+  --card-gap: clamp(0.6rem, 0.91vw, 0.875rem);
+  --card-inset: 0.375rem;
+  --thumbnail-ratio: 16 / 9;
+  --thumbnail-radius: 0;
+
+  /* Article width and rhythm */
+  --article-width: 56.25rem;
+  --article-gutter: clamp(0.875rem, 2.3vw, 2.25rem);
+  --article-page-margin: clamp(0.875rem, 2.1vw, 2rem);
+  --article-panel-padding: clamp(0.9375rem, 3vw, 2.5rem);
+  --article-top-space: clamp(1rem, 2vw, 1.75rem);
+  --article-paragraph-gap: 0.7em;
+  --article-figure-gap: 0.5rem;
+}

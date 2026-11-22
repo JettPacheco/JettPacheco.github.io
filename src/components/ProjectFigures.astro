@@ -1,0 +1,26 @@
+---
+import { projectImages } from '../images'
+import { imagePath } from '../paths'
+import type { ProjectBlock } from '../projects'
+
+type Props = Omit<Extract<ProjectBlock, { kind: 'images' }>, 'kind'>
+const { images, layout = 'stack' } = Astro.props
+---
+
+<div class="project-figures" data-layout={layout}>
+  {images.map((id) => {
+    const image = projectImages[id]
+    return (
+      <figure style={{ '--figure-width': image.detailWidth }}>
+        <img
+          src={imagePath(id)}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    )
+  })}
+</div>

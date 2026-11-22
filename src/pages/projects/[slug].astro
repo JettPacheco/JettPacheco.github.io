@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths } from 'astro'
+import ProjectFigures from '../../components/ProjectFigures.astro'
+import SiteLayout from '../../layouts/SiteLayout.astro'
+import { sitePath } from '../../paths'
+import { projects } from '../../projects'
+
+export const getStaticPaths = (() =>
+  projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }))) satisfies GetStaticPaths
+
+const { project } = Astro.props
+---
+
+<SiteLayout title={`${project.title} | Projects`} description={project.title}>
+  <main class="project-detail">
+    <a class="project-detail__back" href={sitePath()}>All projects</a>
+    <article>
+      <h1>{project.title}</h1>
+      <div class="project-detail__body">
+        {project.blocks.map((block) =>
+          block.kind === 'paragraph'
+            ? <p>{block.text}</p>
+            : <ProjectFigures images={block.images} layout={block.layout} />
+        )}
+      </div>
+    </article>
+  </main>
+</SiteLayout>

@@ -1,0 +1,14 @@
+---
+import ProjectCard from '../components/ProjectCard.astro'
+import SiteLayout from '../layouts/SiteLayout.astro'
+import { projects } from '../projects'
+---
+
+<SiteLayout title="Projects" description="An electrical engineering project portfolio.">
+  <main class="project-index">
+    <h1 class="project-index__heading">Projects</h1>
+    <ul class="project-index__grid" role="list">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </ul>
+  </main>
+</SiteLayout>
